@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chris Westergaard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #f7f7f7;
+      color: #1a1a1a;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 48px 16px 64px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      max-width: 480px;
+      width: 100%;
+      padding: 40px 32px 48px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+
+    /* ── Profile photo ── */
+    .photo-wrapper {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: #e8e8e8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      flex-shrink: 0;
+    }
+
+    /* If you add a real photo, replace the <div class="photo-wrapper"> contents
+       with: <img src="photo.jpg" alt="Chris Westergaard" style="width:100%;height:100%;object-fit:cover;" /> */
+    .photo-placeholder {
+      font-size: 52px;
+      color: #bbb;
+    }
+
+    /* ── Name & bio ── */
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+
+    .bio {
+      font-size: 0.95rem;
+      color: #666;
+      text-align: center;
+      margin-bottom: 36px;
+    }
+
+    /* ── Section ── */
+    .section {
+      width: 100%;
+      margin-bottom: 28px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 16px;
+    }
+
+    /* ── Icon button row ── */
+    .btn-row {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .icon-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: #f0f0f0;
+      color: #1a1a1a;
+      font-size: 1.25rem;
+      text-decoration: none;
+      transition: background 0.18s, transform 0.15s, color 0.18s;
+    }
+
+    .icon-btn:hover { transform: translateY(-2px); }
+
+    .icon-btn.email  { background: #eaf0ff; color: #2c6fdf; }
+    .icon-btn.email:hover  { background: #2c6fdf; color: #fff; }
+
+    .icon-btn.twitter { background: #e8f5ff; color: #000; }
+    .icon-btn.twitter:hover { background: #000; color: #fff; }
+
+    .icon-btn.instagram { background: #fff0f6; color: #c13584; }
+    .icon-btn.instagram:hover { background: linear-gradient(135deg,#f58529,#dd2a7b,#8134af); color: #fff; }
+
+    .icon-btn.threads { background: #f2f0ff; color: #1a1a1a; }
+    .icon-btn.threads:hover { background: #1a1a1a; color: #fff; }
+
+    /* ── Info labels ── */
+    .info-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .info-item {
+      font-size: 0.875rem;
+      color: #555;
+      text-align: center;
+    }
+
+    .info-item strong {
+      color: #1a1a1a;
+      font-weight: 600;
+    }
+
+    /* ── Divider ── */
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: #efefef;
+      margin: 4px 0 28px;
+    }
+
+    /* ── Work section link ── */
+    .work-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.875rem;
+      color: #2c6fdf;
+      text-decoration: none;
+      padding: 10px 18px;
+      border: 1.5px solid #d0e0ff;
+      border-radius: 10px;
+      transition: background 0.18s, border-color 0.18s;
+    }
+
+    .work-link:hover {
+      background: #eaf0ff;
+      border-color: #2c6fdf;
+    }
+
+    .work-role {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #888;
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+
+    .work-role strong {
+      display: block;
+      font-size: 0.9rem;
+      color: #1a1a1a;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+
+    <!-- Photo -->
+    <div class="photo-wrapper">
+      <img src="IMG_0244.jpeg" alt="Chris Westergaard" style="width:100%;height:100%;object-fit:cover;" />
+    </div>
+
+    <!-- Name -->
+    <h1>Chris Westergaard</h1>
+
+    <!-- Bio -->
+    <p class="bio">Dad, husband, community volunteer</p>
+
+    <!-- ── Personal section ── -->
+    <div class="section">
+      <p class="section-title">Personal</p>
+
+      <!-- 4 icon buttons -->
+      <div class="btn-row">
+        <a href="mailto:chris@chrisandeden.com" class="icon-btn email" title="Personal Email">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+        <a href="https://x.com/cpwestergaard" class="icon-btn twitter" title="Twitter / X" target="_blank" rel="noopener">
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+        <a href="https://instagram.com/chriswestergaard" class="icon-btn instagram" title="Instagram" target="_blank" rel="noopener">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://threads.net/@chriswestergaard" class="icon-btn threads" title="Threads" target="_blank" rel="noopener">
+          <i class="fa-brands fa-threads"></i>
+        </a>
+      </div>
+
+      <!-- Labels -->
+      <div class="info-list">
+        <div class="info-item"><strong>Personal Email</strong> &nbsp;chris@chrisandeden.com</div>
+        <div class="info-item"><strong>Twitter / X</strong> &nbsp;@cpwestergaard</div>
+        <div class="info-item"><strong>Instagram &amp; Threads</strong> &nbsp;@chriswestergaard</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ── Work section ── -->
+    <div class="section" style="margin-bottom:0;">
+      <p class="section-title">Work</p>
+      <p class="work-role">
+        <strong>Woodward Lake Master Association</strong>
+        Board Director
+      </p>
+      <div style="display:flex; flex-direction:column; align-items:center; gap:8px;">
+        <span style="font-size:0.7rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#999;">Work Email</span>
+        <a href="mailto:chris.westergaard@wwlma.com" class="work-link">
+          <i class="fa-solid fa-envelope"></i>
+          chris.westergaard@wwlma.com
+        </a>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
