@@ -180,10 +180,15 @@
 
     .banner-icon svg { width: 20px; height: 20px; display: block; }
 
+    /* Text is centred on the banner as a whole: the right margin
+       mirrors the icon tile (44px) plus the gap (14px). */
     .banner-text {
       display: flex;
       flex-direction: column;
+      flex: 1 1 auto;
       min-width: 0;
+      margin-right: 58px;
+      text-align: center;
       line-height: 1.3;
     }
 
@@ -225,6 +230,12 @@
     @media (min-width: 520px) {
       body { padding-top: 48px; padding-bottom: 64px; }
       .card { padding: 40px 32px 36px; }
+    }
+
+    /* Phones: no mirror margin, so the long work address stays on one line;
+       text centres in the space beside the icon */
+    @media (max-width: 480px) {
+      .banner-text { margin-right: 0; }
     }
 
     /* Narrow phones (320px class): keep addresses on one line */
